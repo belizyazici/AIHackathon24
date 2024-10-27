@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ders Odam</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <header>
-        <h1 class="logo">Ders Odam</h1>
+        <h1 class="logo"><a href="website.html" class="header-link">Ders Odam</a></h1>
         <nav>
             <ul class="menu">
                 <li class="dropdown">
@@ -25,29 +25,28 @@
     </header>
     
     <main>
-        <!-- Ana fotoğraf bölümü -->
-        <div class="main-image">
-            <img src="classroom.jpg" alt="Eğitim Sitesi Ana Görseli">
-        </div>
-
         <!-- Ders Butonları -->
         <div class="main-sections">
-            <section id="fifth">
-                <h2><a href="fifth.html" class="section-link">5. Sınıf</a></h2>
+            <section id="turkce">
+                <h2><a href="turkce.html" class="section-link">Türkçe</a></h2>
             </section>
 
-            <section id="sixth">
-                <h2><a href="sixth.html" class="section-link">6. Sınıf</a></h2>
+            <section id="matematik">
+                <h2><a href="matematik.html" class="section-link">Matematik</a></h2>
             </section>
 
-            <section id="seventh">
-                <h2><a href="seventh.html" class="section-link">7. Sınıf</a></h2>
+            <section id="fen">
+                <h2><a href="fen.html" class="section-link">Fen Bilimleri</a></h2>
             </section>
 
-            <section id="eighth">
-                <h2><a href="eighth.html" class="section-link">8. Sınıf</a></h2>
+            <section id="sosyal">
+                <h2><a href="sosyal.html" class="section-link">Sosyal Bilgiler</a></h2>
             </section>
             
+            <section id="dil">
+                <h2><a href="dil.html" class="section-link">Yabancı Dil</a></h2>
+            </section>
+
         </div>
     </main>
 </body>

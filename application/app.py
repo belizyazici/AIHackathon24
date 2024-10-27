@@ -4,21 +4,38 @@ import os
 
 app = Flask(__name__)
 
-# API anahtarınızı çevresel değişkenden alarak yapılandırın
+# API key configuration
 genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
 
 def chat_with_bot(user_message):
-    # Eğitim odaklı bir yanıt istemek için modeli başlatın
     model = genai.GenerativeModel(model_name="gemini-1.5-flash")
-    
-    # Kullanıcı mesajını ekleyerek modelden yanıt alın
     response = model.generate_content([f"Eğitimci gibi cevapla: {user_message}"])
-    
     return response.text
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("website.html")
+
+@app.route("/fifth")
+def fifth():
+    return render_template("fifth.html")
+
+@app.route("/sixth")
+def sixth():
+    return render_template("sixth.html")
+
+@app.route("/seventh")
+def seventh():
+    return render_template("seventh.html")
+
+@app.route("/eighth")
+def eighth():
+    return render_template("eighth.html")
+
+
+@app.route("/dil")
+def dil():
+    return render_template("dil.html")
 
 @app.route("/get_response", methods=["POST"])
 def get_response():

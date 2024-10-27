@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ders Odam</title>
-    <link rel="stylesheet" href="styledil.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styledil.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome Kütüphanesi -->
 </head>
 <body>
     <header>
-        <h1 class="logo"><a href="website.html" class="header-link">Ders Odam</a></h1>
+        <h1 class="logo"><a href="/website" class="header-link">Ders Odam</a></h1>
         <nav>
             <ul class="menu">
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Sınıflar</a>
                     <div class="dropdown-content">
-                        <a href="fifth.html" href="#fifth">5. Sınıf</a>
-                        <a href="sixth.html" href="#sixth">6. Sınıf</a>
-                        <a href="seventh.html" href="#seventh">7. Sınıf</a>
-                        <a href="eighth.html" href="#eighth">8. Sınıf</a>
+                        <a href="/fifth">5. Sınıf</a>
+                        <a href="/sixth">6. Sınıf</a>
+                        <a href="/seventh">7. Sınıf</a>
+                        <a href="/eighth">8. Sınıf</a>
                     </div>
                 </li>
             </ul>
@@ -79,7 +79,7 @@
                             <li><button onclick="playVideo('VIDEO_ID_16')">Veri Toplama</button></li>
                             <li><button onclick="playVideo('VIDEO_ID_17')">Uzunluk ve Zaman Ölçme 1</button></li>
                             <li><button onclick="playVideo('VIDEO_ID_18')">Uzunluk ve Zaman Ölçme 2</button></li>
-                            <li><button onclick="playVideo('VIDEO_ID_18')">Uzunluk ve Zaman Ölçme 3</button></li>
+                            <li><button onclick="playVideo('VIDEO_ID_19')">Uzunluk ve Zaman Ölçme 3</button></li>
                         </ul>
                     </div>
                 </div>
@@ -87,9 +87,9 @@
                     <h3>6. Ünite</h3>
                     <div class="topics" id="unit6" style="display: none;">
                         <ul>
-                            <li><button onclick="playVideo('VIDEO_ID_19')">Alan Ölçme</button></li>
-                            <li><button onclick="playVideo('VIDEO_ID_20')">Problemler</button></li>
-                            <li><button onclick="playVideo('VIDEO_ID_21')">Geometrik Cisimler</button></li>
+                            <li><button onclick="playVideo('VIDEO_ID_20')">Alan Ölçme</button></li>
+                            <li><button onclick="playVideo('VIDEO_ID_21')">Problemler</button></li>
+                            <li><button onclick="playVideo('VIDEO_ID_22')">Geometrik Cisimler</button></li>
                         </ul>
                     </div>
                 </div>
@@ -102,35 +102,49 @@
 
             <div class="chat-section">
                 <h2>ChatBot</h2>
-                <iframe id="contentIframe" src="application\templates\index.html" style="display: none; width: 300px; height: 400px; border: none;"></iframe>    
-                <button class="expand-button" onclick="openChat()">
-                    <i class="fa-regular fa-comment" style="color: #ffffff;"></i>
-                </button>            
+                <div class="chat-container">
+                    <div class="messages" id="messages"></div>
+                    <input type="text" id="userInput" placeholder="Soru yazın..." style="width: 100%; padding: 8px;">
+                    <button onclick="sendMessage()">Gönder</button>
+                </div>
             </div>
-
             
+            <script>
+    function appendMessage(text, sender) {
+        const messageContainer = document.getElementById("messages");
+        const message = document.createElement("div");
+        message.classList.add("message", sender);
+        message.textContent = text;
+        messageContainer.appendChild(message);
+        messageContainer.scrollTop = messageContainer.scrollHeight;
+    }
+
+    async function sendMessage() {
+        const userInput = document.getElementById("userInput").value;
+        if (!userInput) return;
+
+        appendMessage(userInput, "user");
+        document.getElementById("userInput").value = "";
+
+        try {
+            const response = await fetch("/get_response", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: userInput })
+            });
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            const data = await response.json();
+            appendMessage(data.response, "bot");
+        } catch (error) {
+            console.error("Error:", error);
+            appendMessage("Bir hata oluştu. Lütfen tekrar deneyin.", "bot");
+        }
+    }
+</script>
+
         </div>
     </main>
-
-    <script>
-        function toggleTopics(unitId) {
-            const topics = document.getElementById(unitId);
-            if (topics.style.display === "none") {
-                topics.style.display = "block";
-            } else {
-                topics.style.display = "none";
-            }
-        }
-
-        function playVideo(videoId) {
-            const videoPlayer = document.getElementById('videoPlayer');
-            videoPlayer.src = `https://www.youtube.com/embed/${videoId}`;
-        }
-
-        function openChat() {
-            const iframe = document.getElementById("contentIframe");
-            iframe.style.display = (iframe.style.display === "none") ? "block" : "none";
-        }
-    </script>
 </body>
 </html>
