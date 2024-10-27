@@ -1,4 +1,4 @@
-const API_KEY = 'YOUR_YOUTUBE_API_KEY'; // YouTube API anahtarını buraya ekle
+const API_KEY = 'YOUR_YOUTUBE_API_KEY'; 
 
 const fetchVideos = async (query, elementId) => {
     const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&type=video&key=${API_KEY}&maxResults=5`;
@@ -22,6 +22,5 @@ const displayVideos = (videos, elementId) => {
     });
 };
 
-// Matematik ve Türkçe videolarını çekmek için çağrılar yap
 fetchVideos('ortaokul matematik dersi', 'matematik-videolar');
 fetchVideos('ortaokul türkçe dersi', 'turkce-videolar');
