@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ders Odam</title>
-    <link rel="stylesheet" href="stylesosyal.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesosyal.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome Kütüphanesi -->
 </head>
 <body>
@@ -15,13 +15,14 @@
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Sınıflar</a>
                     <div class="dropdown-content">
-                        <a href="fifth.html" href="#fifth">5. Sınıf</a>
-                        <a href="sixth.html" href="#sixth">6. Sınıf</a>
-                        <a href="seventh.html" href="#seventh">7. Sınıf</a>
-                        <a href="eighth.html" href="#eighth">8. Sınıf</a>
+                        <a href="{{ url_for('fifth') }}">5. Sınıf</a>
+                        <a href="{{ url_for('sixth') }}">6. Sınıf</a>
+                        <a href="{{ url_for('seventh') }}">7. Sınıf</a>
+                        <a href="{{ url_for('eighth') }}">8. Sınıf</a>
                     </div>
                 </li>
             </ul>
+            
         </nav>
     </header>
     
@@ -101,18 +102,16 @@
 
             <div class="chat-section">
                 <h2>ChatBot</h2>
-                <iframe id="contentIframe" src="application\templates\index.html" style="display: none; width: 300px; height: 400px; border: none;"></iframe>    
-                <button class="expand-button" onclick="openChat()">
-                    <i class="fa-regular fa-comment" style="color: #ffffff;"></i>
-                </button>            
+                <div class="chat-container">
+                    <div class="messages" id="messages"></div>
+                    <input type="text" id="userInput" placeholder="Soru yazın..." style="width: 100%; padding: 8px;">
+                    <button onclick="sendMessage()">Gönder</button>
+                </div>
             </div>
-
             
-        </div>
-    </main>
+            <script>
 
-    <script>
-        function toggleTopics(unitId) {
+function toggleTopics(unitId) {
             const topics = document.getElementById(unitId);
             if (topics.style.display === "none") {
                 topics.style.display = "block";
@@ -126,10 +125,40 @@
             videoPlayer.src = `https://www.youtube.com/embed/${videoId}`;
         }
 
-        function openChat() {
-            const iframe = document.getElementById("contentIframe");
-            iframe.style.display = (iframe.style.display === "none") ? "block" : "none";
+    function appendMessage(text, sender) {
+        const messageContainer = document.getElementById("messages");
+        const message = document.createElement("div");
+        message.classList.add("message", sender);
+        message.textContent = text;
+        messageContainer.appendChild(message);
+        messageContainer.scrollTop = messageContainer.scrollHeight;
+    }
+
+    async function sendMessage() {
+        const userInput = document.getElementById("userInput").value;
+        if (!userInput) return;
+
+        appendMessage(userInput, "user");
+        document.getElementById("userInput").value = "";
+
+        try {
+            const response = await fetch("/get_response", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: userInput })
+            });
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            const data = await response.json();
+            appendMessage(data.response, "bot");
+        } catch (error) {
+            console.error("Error:", error);
+            appendMessage("Bir hata oluştu. Lütfen tekrar deneyin.", "bot");
         }
-    </script>
+    }
+</script>
+
+      
 </body>
 </html>

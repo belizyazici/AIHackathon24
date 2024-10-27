@@ -32,10 +32,26 @@ def seventh():
 def eighth():
     return render_template("eighth.html")
 
+@app.route("/turkce")
+def turkce():
+    return render_template("turkce.html")
+
+@app.route("/fen")
+def fen():
+    return render_template("fen.html")
+
+@app.route("/matematik")
+def matematik():
+    return render_template("matematik.html")
+
+@app.route("/sosyal")
+def sosyal():
+    return render_template("sosyal.html")
 
 @app.route("/dil")
 def dil():
     return render_template("dil.html")
+
 
 @app.route("/get_response", methods=["POST"])
 def get_response():

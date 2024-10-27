@@ -14,13 +14,14 @@
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Sınıflar</a>
                     <div class="dropdown-content">
-                        <a href="fifth.html" href="#fifth">5. Sınıf</a>
-                        <a href="sixth.html" href="#sixth">6. Sınıf</a>
-                        <a href="seventh.html" href="#seventh">7. Sınıf</a>
-                        <a href="eighth.html" href="#eighth">8. Sınıf</a>
+                        <a href="{{ url_for('fifth') }}">5. Sınıf</a>
+                        <a href="{{ url_for('sixth') }}">6. Sınıf</a>
+                        <a href="{{ url_for('seventh') }}">7. Sınıf</a>
+                        <a href="{{ url_for('eighth') }}">8. Sınıf</a>
                     </div>
                 </li>
             </ul>
+            
         </nav>
     </header>
     
@@ -28,23 +29,24 @@
         <!-- Ders Butonları -->
         <div class="main-sections">
             <section id="turkce">
-                <h2><a href="turkce.html" class="section-link">Türkçe</a></h2>
+                <h2><a href="/turkce" class="section-link">Türkçe</a></h2>
             </section>
+            
 
             <section id="matematik">
-                <h2><a href="matematik.html" class="section-link">Matematik</a></h2>
+                <h2><a href="/matematik" class="section-link">Matematik</a></h2>
             </section>
 
             <section id="fen">
-                <h2><a href="fen.html" class="section-link">Fen Bilimleri</a></h2>
+                <h2><a href="/fen" class="section-link">Fen Bilimleri</a></h2>
             </section>
 
             <section id="sosyal">
-                <h2><a href="sosyal.html" class="section-link">Sosyal Bilgiler</a></h2>
+                <h2><a href="/sosyal" class="section-link">Sosyal Bilgiler</a></h2>
             </section>
             
             <section id="dil">
-                <h2><a href="dil.html" class="section-link">Yabancı Dil</a></h2>
+                <h2><a href="/dil" class="section-link">Yabancı Dil</a></h2>
             </section>
 
         </div>

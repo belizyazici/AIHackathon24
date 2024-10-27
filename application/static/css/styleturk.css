@@ -157,3 +157,32 @@ button:hover {
 .chat-section{
     margin-right: 100px;
 }
+
+.chat-container {
+    width: 400px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.messages {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.message {
+    margin: 5px 0;
+}
+
+.bot {
+    color: blue;
+}
+
+.user {
+    color: green;
+    text-align: right;
+}
