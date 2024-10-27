@@ -1,0 +1,159 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    padding: 20px;
+    margin-top: 80px; /* Header yüksekliği kadar boşluk bırak */
+}
+
+.units-section {
+    flex: 0.5; /* Ünite alanı daha dar olacak */
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.video-section {
+    flex: 2; /* Video alanı daha geniş olacak */
+    margin-left: 40px; /* Soldaki ünite bölümüne mesafe */
+}
+
+.expand-button {
+    background-color: #81048d; 
+    color: white; 
+    border: none; /* Kenarlık yok */
+    border-radius: 50%; 
+    width: 50px; /* Genişlik */
+    height: 50px; /* Yükseklik */
+    font-size: 24px; 
+    cursor: pointer; /* İmleci pointer yapar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s, transform 0.3s; 
+    
+}
+
+.expand-button:hover {
+    background-color: #ad09bc; 
+    transform: scale(1.1);
+}
+
+.unit {
+    margin-bottom: 15px;
+    cursor: pointer; /* Ünite başlıklarına tıklandığında işaretçi değişecek */
+}
+
+.unit h3 {
+    background-color: #81048d;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.unit h3:hover {
+    background-color: #ad09bc;
+    
+}
+
+.topics {
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.header-link {
+    color: white; /* Bağlantı rengini beyaz yapar */
+    text-decoration: none; /* Alt çizgi yok */
+}
+
+header {
+    position: fixed; /* Header'ı sabit yapar */
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #81048d;
+    color: white;
+    z-index: 1000; /* Üstte görünmesi için */
+}
+
+header .logo {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Menü stilleri */
+nav .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav .menu li {
+    position: relative;
+    margin-right: 20px;
+}
+
+nav .menu .dropbtn {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    background-color: #81048d;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+nav .menu .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 160px;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+nav .menu .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #ddd;
+}
+
+nav .menu .dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+nav .menu .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+button {
+    background-color: #81048d;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px 0; /* Butonlar arasında boşluk */
+    width: 100%; /* Butonların genişliğini kapsayıcıya göre ayarlamak için */
+}
+
+button:hover {
+    background-color: #ad09bc; /* Hover durumunda buton rengi değişimi */
+}
+
+.chat-section{
+    margin-right: 100px;
+}

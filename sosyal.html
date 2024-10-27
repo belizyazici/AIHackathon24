@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ders Odam</title>
+    <link rel="stylesheet" href="stylesosyal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome Kütüphanesi -->
+</head>
+<body>
+    <header>
+        <h1 class="logo"><a href="website.html" class="header-link">Ders Odam</a></h1>
+        <nav>
+            <ul class="menu">
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Sınıflar</a>
+                    <div class="dropdown-content">
+                        <a href="fifth.html" href="#fifth">5. Sınıf</a>
+                        <a href="sixth.html" href="#sixth">6. Sınıf</a>
+                        <a href="seventh.html" href="#seventh">7. Sınıf</a>
+                        <a href="eighth.html" href="#eighth">8. Sınıf</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="units-section">
+                <h2>Üniteler</h2>
+                <div class="unit" onclick="toggleTopics('unit1')">
+                    <h3>1. Ünite</h3>
+                    <div class="topics" id="unit1" style="display: none;">
+                        <ul>
+                            <li><button onclick="playVideo('VIDEO_ID_1')">Basamak ve Bölük Kavramı</button></li>
+                            <li><button onclick="playVideo('VIDEO_ID_2')">Doğal Sayıların Okunuşu</button></li>
+                            <li><button onclick="playVideo('VIDEO_ID_3')">Sayı ve Basamak Değeri</button></li>
+                            <li><button onclick="playVideo('VIDEO_ID_4')">Doğal Sayılarda Çözümleme</button></li>
+                            <li><button onclick="playVideo('VIDEO_ID_5')">Doğal Sayılarda Sıralama</button></li>
+                            <li><button onclick="playVideo('VIDEO_ID_6')">Örüntüler</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="unit" onclick="toggleTopics('unit2')">
+                    <h3>2. Ünite</h3>
+                    <div class="topics" id="unit2" style="display: none;">
+                        <ul>
+                            <li><button onclick="playVideo('VIDEO_ID_7')">Kesirler</button></li>
+                            <li><button onclick="playVideo('VIDEO_ID_8')">Kesir Çeşitleri</button></li>
+                            <li><button onclick="playVideo('VIDEO_ID_9')">Kesirlerde Sıralama</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="unit" onclick="toggleTopics('unit3')">
+                    <h3>3. Ünite</h3>
+                    <div class="topics" id="unit3" style="display: none;">
+                        <ul>
+                            <li><button onclick="playVideo('VIDEO_ID_10')">Ondalık Gösterim</button></li>
+                            <li><button onclick="playVideo('VIDEO_ID_11')">Ondalık Kesirleri Karşılaştırma</button></li>
+                            <li><button onclick="playVideo('VIDEO_ID_12')">Yüzdeler</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="unit" onclick="toggleTopics('unit4')">
+                    <h3>4. Ünite</h3>
+                    <div class="topics" id="unit4" style="display: none;">
+                        <ul>
+                            <li><button onclick="playVideo('VIDEO_ID_13')">Geometrik Kavramlar</button></li>
+                            <li><button onclick="playVideo('VIDEO_ID_14')">Konum Belirleme</button></li>
+                            <li><button onclick="playVideo('VIDEO_ID_15')">Açılar</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="unit" onclick="toggleTopics('unit5')">
+                    <h3>5. Ünite</h3>
+                    <div class="topics" id="unit5" style="display: none;">
+                        <ul>
+                            <li><button onclick="playVideo('VIDEO_ID_16')">Veri Toplama</button></li>
+                            <li><button onclick="playVideo('VIDEO_ID_17')">Uzunluk ve Zaman Ölçme 1</button></li>
+                            <li><button onclick="playVideo('VIDEO_ID_18')">Uzunluk ve Zaman Ölçme 2</button></li>
+                            <li><button onclick="playVideo('VIDEO_ID_18')">Uzunluk ve Zaman Ölçme 3</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="unit" onclick="toggleTopics('unit6')">
+                    <h3>6. Ünite</h3>
+                    <div class="topics" id="unit6" style="display: none;">
+                        <ul>
+                            <li><button onclick="playVideo('VIDEO_ID_19')">Alan Ölçme</button></li>
+                            <li><button onclick="playVideo('VIDEO_ID_20')">Problemler</button></li>
+                            <li><button onclick="playVideo('VIDEO_ID_21')">Geometrik Cisimler</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-section">
+                <h2>Video Oynatıcı</h2>
+                <iframe id="videoPlayer" width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>          
+            </div>
+
+            <div class="chat-section">
+                <h2>ChatBot</h2>
+                <iframe id="contentIframe" src="index (1).html" style="display: none; width: 300px; height: 400px; border: none;"></iframe>    
+                <button class="expand-button" onclick="openChat()">
+                    <i class="fa-regular fa-comment" style="color: #ffffff;"></i>
+                </button>            
+            </div>
+
+            
+        </div>
+    </main>
+
+    <script>
+        function toggleTopics(unitId) {
+            const topics = document.getElementById(unitId);
+            if (topics.style.display === "none") {
+                topics.style.display = "block";
+            } else {
+                topics.style.display = "none";
+            }
+        }
+
+        function playVideo(videoId) {
+            const videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.src = `https://www.youtube.com/embed/${videoId}`;
+        }
+
+        function openChat() {
+            const iframe = document.getElementById("contentIframe");
+            iframe.style.display = (iframe.style.display === "none") ? "block" : "none";
+        }
+    </script>
+</body>
+</html>

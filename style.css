@@ -1,0 +1,182 @@
+/* Temel stil ayarları */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding-top: 80px; /* Header yüksekliğine göre yukarıdan boşluk */
+}
+
+header {
+    position: fixed; /* Header'ı sabit yapar */
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    z-index: 1000; /* Üstte görünmesi için */
+}
+
+header .logo {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Menü stilleri */
+nav .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav .menu li {
+    position: relative;
+    margin-right: 20px;
+}
+
+nav .menu .dropbtn {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+nav .menu .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 160px;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+nav .menu .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #ddd;
+}
+
+nav .menu .dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+nav .menu .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Ana görsel stili */
+.main-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.main-image img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Ders butonlarının stili */
+.main-sections {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 100px;
+    
+}
+
+section {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 50px 100px;
+    border-radius: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 30px 0; 
+}
+
+section h2 {
+    background-color: rgba(5, 167, 248, 0.921);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+section:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.section-link {
+    color: white; /* Bağlantı rengini beyaz yapar */
+    text-decoration: none; /* Alt çizgi yok */
+}
+
+.section-link:hover {
+    text-decoration: underline; /* Üzerine gelindiğinde alt çizgi ekler */
+}
+
+.header-link {
+    color: white; /* Bağlantı rengini beyaz yapar */
+    text-decoration: none; /* Alt çizgi yok */
+}
+/*
+.header-link:hover {
+    text-decoration: underline; /* Üzerine gelindiğinde alt çizgi ekler 
+}*/
+
+/* Her buton için özel arka plan resmi */
+#fifth {
+    background-image: url('1.jpg');
+}
+
+#sixth {
+    background-image: url('2.jpg');
+}
+
+#seventh {
+    background-image: url('3.jpg');
+}
+
+#eighth {
+    background-image: url('4.jpg');
+}
+
+#turkce {
+    background-image: url('1.jpg');
+}
+
+#matematik {
+    background-image: url('2.jpg');
+}
+
+#fen {
+    background-image: url('3.jpg');
+}
+
+#sosyal {
+    background-image: url('4.jpg');
+}
+
+#dil {
+    background-image: url('4.jpg');
+}
+
+
