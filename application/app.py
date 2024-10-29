@@ -36,9 +36,17 @@ def eighth():
 def turkce():
     return render_template("turkce.html")
 
+@app.route("/turkcesix")
+def turkcesix():
+    return render_template("turkcesix.html")
+
 @app.route("/fen")
 def fen():
     return render_template("fen.html")
+
+@app.route("/fenseven")
+def fenseven():
+    return render_template("fenseven.html")
 
 @app.route("/matematik")
 def matematik():
@@ -47,6 +55,10 @@ def matematik():
 @app.route("/sosyal")
 def sosyal():
     return render_template("sosyal.html")
+
+@app.route("/sosyaleight")
+def sosyaleight():
+    return render_template("sosyaleight.html")
 
 @app.route("/dil")
 def dil():

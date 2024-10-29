@@ -13,7 +13,7 @@ body {
 .units-section {
     flex: 0.5; /* Ünite alanı daha dar olacak */
     background-color: #f0f0f0;
-    padding: 20px;
+    padding: 30px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -52,6 +52,7 @@ body {
     color: white;
     padding: 10px;
     border-radius: 5px;
+    width: 150px;
 }
 
 .unit h3:hover {
@@ -155,7 +156,7 @@ button:hover {
 }
 
 .chat-section{
-    margin-right: 100px;
+    margin-right: 140px;
 }
 
 .chat-container {
@@ -164,6 +165,11 @@ button:hover {
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
+    margin-left: 40px;
+}
+
+.chat-title {
+    margin-left: 40px;
 }
 
 .messages {

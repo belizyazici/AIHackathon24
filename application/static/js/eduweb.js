@@ -22,5 +22,7 @@ const displayVideos = (videos, elementId) => {
     });
 };
 
+
+
 fetchVideos('ortaokul matematik dersi', 'matematik-videolar');
 fetchVideos('ortaokul türkçe dersi', 'turkce-videolar');

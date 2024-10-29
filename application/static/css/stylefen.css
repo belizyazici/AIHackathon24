@@ -52,6 +52,7 @@ body {
     color: white;
     padding: 10px;
     border-radius: 5px;
+    width: 150px;
 }
 
 .unit h3:hover {
@@ -163,6 +164,11 @@ button:hover {
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
+    margin-left: 40px;
+}
+
+.chat-title {
+    margin-left: 40px;
 }
 
 .messages {
