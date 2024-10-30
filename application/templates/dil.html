@@ -117,6 +117,7 @@
                     <div class="messages" id="messages"></div>
                     <input type="text" id="userInput" placeholder="Soru yazın..." style="width: 95%; padding: 8px;">
                     <button onclick="sendMessage()">Gönder</button>
+                    <button onclick="goToHomePage()">Ana Sayfaya Dön</button>
                 </div>
             </div>
             
@@ -168,6 +169,10 @@ function toggleTopics(unitId) {
             appendMessage("Bir hata oluştu. Lütfen tekrar deneyin.", "bot");
         }
     }
+    function goToHomePage() {
+    window.location.href = "{{ url_for('home') }}"; 
+}
+
 </script>
 
     </main>

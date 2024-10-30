@@ -114,10 +114,15 @@
                     <div class="messages" id="messages"></div>
                     <input type="text" id="userInput" placeholder="Soru yazın..." style="width: 95%; padding: 8px;">
                     <button onclick="sendMessage()">Gönder</button>
+                    <button onclick="goToHomePage()">Ana Sayfaya Dön</button>
                 </div>
             </div>
             
             <script>
+                function goToHomePage() {
+    window.location.href = "{{ url_for('home') }}"; 
+}
+
 
 function toggleTopics(unitId) {
             const topics = document.getElementById(unitId);
