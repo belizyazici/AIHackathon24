@@ -16,7 +16,6 @@ Ders Odam is a comprehensive web application designed to assist middle school st
 - [Chatbot Functionality](#chatbot-functionality)
 - [Video Resources](#video-resources)
 - [Styling](#styling)
-- [Contributing](#contributing)
 
 
 ## Features
