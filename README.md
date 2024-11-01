@@ -1,6 +1,8 @@
 # Ders Odam Web Application
 
 Ders Odam is a comprehensive web application designed to assist middle school students in their studies by providing a variety of educational resources, interactive chat with a bot, and access to educational videos tailored to their curriculum. The platform covers multiple subjects and promotes interactive learning.
+<br>
+ <br>Here is the video of the web application: <a href="https://www.youtube.com/watch?v=hAsXT4aibZU" target="_blank" rel="noreferrer" style="color: #8e44ad;">Video Link of the Project</a>
 
 ![image](https://github.com/user-attachments/assets/127a51a4-d28d-4824-9cb0-d251fb418c57)
 
@@ -106,7 +108,3 @@ ders-odam/
 ## Styling
 - CSS files are used to create a responsive and visually appealing design. Styles are defined for different sections, including buttons, headers, and containers.
 - Font Awesome is utilized for adding icons to enhance the user interface.
-
-## Contributing
-Contributions are welcome! Please fork the repository, create a new branch, and submit a pull request for any changes or improvements. Include relevant issues or suggestions for enhancements.
-
