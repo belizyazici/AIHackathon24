@@ -1,107 +1,112 @@
-# Ders Odam Web Uygulaması
+# Ders Odam Web Application
 
-Ders Odam, ortaokul öğrencilerinin eğitim süreçlerini desteklemek için tasarlanmış kapsamlı bir web uygulamasıdır. Uygulama, çeşitli eğitim kaynakları, etkileşimli sohbetler sunan bir chatbot ve müfredatlara uygun eğitim videoları ile öğrencilerin öğrenme deneyimlerini zenginleştirir. Hedefimiz, öğrencilerin eğitimde daha aktif rol almalarını sağlamak ve öğrenmeyi eğlenceli hale getirmektir.
+Ders Odam is a comprehensive web application designed to assist middle school students in their studies by providing a variety of educational resources, interactive chat with a bot, and access to educational videos tailored to their curriculum. The platform covers multiple subjects and promotes interactive learning.
 
-![image](https://github.com/user-attachments/assets/a41fc994-33cd-4ff9-846f-bb79a4a65b91)
+![image](https://github.com/user-attachments/assets/127a51a4-d28d-4824-9cb0-d251fb418c57)
 
-
-## İçindekiler
-- [Özellikler](#özellikler)
-- [Kullanılan Teknolojiler](#kullanılan-teknolojiler)
-- [Kurulum](#kurulum)
-- [Kullanım](#kullanım)
-- [Dosya Yapısı](#dosya-yapısı)
-- [API Yapılandırması](#api-yapılandırması)
-- [Chatbot İşlevselliği](#chatbot)
-- [Video Kaynakları](#video-kaynakları)
-- [Stil](#stil)
-
-## Özellikler
-- **Etkileşimli Chatbot**: Google Generative AI tarafından desteklenen bir sohbetbotuyla etkileşime geçin ve ortaokul seviyesine göre uyarlanmış eğitimsel yanıtlar sağlayın. Bot, karmaşık konuları basitleştirir ve 8. sınıf öğrencilerine uygun bir şekilde iletişim kurar. - **Eğitim Kaynakları**: Kullanıcılar, her biri sınıfa özgü içerikler sunan Türkçe, Matematik, Fen, Yabancı Dil ve Sosyal Bilgiler gibi çeşitli konularda gezinebilir.
-- **Video Oynatıcı**: Entegre video oynatıcı, öğrencilerin eğitim videolarını doğrudan platform içinde izlemelerine olanak tanır ve görsel yardımcılarla öğrenme deneyimlerini geliştirir.
-- **Duyarlı Tasarım**: Uygulama, farklı cihazlarda erişilebilirliği garanti ederek mobil uyumlu olacak şekilde tasarlanmıştır.
-- **Kullanıcı Dostu Gezinme**: Basit ve sezgisel gezinme yapısı, farklı konulara ve sınıflara kolay erişim sağlar.
-
-![image](https://github.com/user-attachments/assets/61d3d1cd-6140-4110-920e-917436b29e8a)
+## Table of Contents
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [File Structure](#file-structure)
+- [API Configuration](#api-configuration)
+- [Chatbot Functionality](#chatbot-functionality)
+- [Video Resources](#video-resources)
+- [Styling](#styling)
+- [Contributing](#contributing)
 
 
-## Kullanılan Teknolojiler
-- **Flask**: Sunucu tarafı mantığı ve yönlendirme için kullanılan, Python için hafif bir web çerçevesi.
-- **HTML/CSS**: Web sayfalarını yapılandırmak ve biçimlendirmek, görsel olarak çekici bir düzen sağlamak için.
-- **JavaScript**: Frontend'de dinamik etkileşimler için, kullanıcı katılımını artırmak için.
-- **Google Generative AI**: Chatbot işlevselliğini güçlendirmek, kullanıcı sorularına yanıt vermesini sağlamak için. - **YouTube API**: Konularla ilgili eğitim videolarını getirir ve daha geniş bir kaynak yelpazesi sunar.
+## Features
+- **Interactive Chatbot**: Engage with a chatbot powered by Google Generative AI, providing educational responses tailored to a middle school level. The bot simplifies complex topics and communicates in a manner suitable for 8th-grade students.
+- **Educational Resources**: Users can navigate through various subjects such as Türkçe, Matematik, Fen, and Sosyal Bilgiler, each featuring grade-specific content.
+- **Video Player**: Integrated video player allows students to watch educational videos directly within the platform, enhancing their learning experience with visual aids.
+- **Responsive Design**: The application is designed to be mobile-friendly, ensuring accessibility across different devices.
+- **User-Friendly Navigation**: Simple and intuitive navigation structure enables easy access to different subjects and classes.
 
-## Kurulum
-1. Depoyu kopyalayın:
-```bash
-git clone https://github.com/yourusername/ders-odam.git
-cd ders-odam
-```
+![Screenshot_1](https://github.com/user-attachments/assets/5b482fc6-7619-48e5-ab9f-f4d07b8de67f)
 
-2. Sanal bir ortam kurun (isteğe bağlı ancak önerilir):
-```bash
-python -m venv venv
-source venv/bin/activate # Windows'ta `venv\Scripts ctivate` kullanın
-```
+## Technologies Used
+- **Flask**: A lightweight web framework for Python, used for server-side logic and routing.
+- **HTML/CSS**: For structuring and styling the web pages, ensuring a visually appealing layout.
+- **JavaScript**: For dynamic interactions on the front end, enhancing user engagement.
+- **Google Generative AI**: To power the chatbot functionality, enabling it to respond to user inquiries.
+- **YouTube API**: Fetches educational videos relevant to the subjects, providing a broader range of resources.
 
-3. Gerekli paketleri kurun:
-```bash
-pip install Flask google-generativeai
-```
+## Installation
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/ders-odam.git
+    cd ders-odam
+    ```
 
-4. Ortam değişkenlerinizi kurun:
-- Kök dizinde bir `.env` dosyası oluşturun ve Google API anahtarınızı ekleyin:
-```plaintext
-GOOGLE_API_KEY=your_api_key_here
-```
+2. Set up a virtual environment (optional but recommended):
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scriptsctivate`
+    ```
 
-## Kullanım
-1. Flask uygulamasını çalıştırın:
-```bash
-python app.py
-```
+3. Install the required packages:
+    ```bash
+    pip install Flask google-generativeai
+    ```
 
-2. Web tarayıcınızı açın ve `http://127.0.0.1:5000/` adresine gidin.
+4. Set up your environment variables:
+    - Create a `.env` file in the root directory and add your Google API key:
+        ```plaintext
+        GOOGLE_API_KEY=your_api_key_here
+        ```
 
-3. Bir sınıf seviyesi veya konu seçmek için gezinme menüsünü kullanın. Her bölüm, o konu için ilgili içerik içerir.
+## Usage
+1. Run the Flask application:
+    ```bash
+    python app.py
+    ```
+2. Open your web browser; the application will be running locally on your machine.
 
-4. Belirlenen giriş alanına sorularınızı yazarak sohbet robotuyla etkileşim kurun. Bot, sağlanan müfredat yönergelerine göre yanıt verecektir.
+3. Use the navigation menu to select a grade level or subject. Each section contains relevant content for that subject.
 
-5. Her konu bölümünde bulunan konulara tıklayarak eğitim videoları izleyin. Videolar doğrudan uygulama içine yerleştirilmiştir.
+4. Interact with the chatbot by typing your questions in the designated input area. The bot will respond based on the provided curriculum guidelines.
 
-## Dosya Yapısı
+5. Watch educational videos by clicking on the topics available in each subject section. Videos are embedded directly within the application.
+
+## File Structure
 ```
 ders-odam/
-├── app.py # Ana uygulama betiği
-├── eduweb.js # Videoları almak ve görüntülemek için JavaScript
-├── templates/ # Sayfaları işlemek için HTML dosyaları içerir
-│ ├── dil.html
-│ ├── fifth.html
-│ ├── sixth.html
-│ ├── seventh.html
-│ ├── eighth.html
-│ └── website.html ...
-└── static/ # CSS ve resimler gibi statik dosyalar içerir
-├── css/
-│ ├── styledil.css # CSS için dil bölümü
-│ └── style.css # Genel CSS stilleri
-└── classroom.jpg... # Uygulama için resimler
+├── app.py                  # Main application script
+├── eduweb.js               # JavaScript for fetching and displaying videos
+├── templates/              # Contains HTML files for rendering pages
+│   ├── dil.html
+│   ├── fifth.html
+│   ├── sixth.html
+│   ├── seventh.html
+│   ├── eighth.html
+│   └── website.html...
+└── static/                 # Contains static files such as CSS and images
+    ├── css/
+    │   ├── styledil.css    # CSS for the language section
+    │   └── style.css       # General CSS styles
+    └── classroom.jpg...       # Main image for the application
 ```
 
-## API Yapılandırması
-- Google Generative AI özelliklerini kullanmak için, API anahtarının ortam değişkenlerinizde doğru şekilde ayarlandığından emin olun.
-- Google Cloud Console'unuzda gerekli Google API'lerini (ör. Generative AI API, YouTube Data API) etkinleştirin.
+## API Configuration
+- To utilize the Google Generative AI features, ensure that the API key is correctly set in your environment variables.
+- Enable the necessary Google APIs (e.g., Generative AI API, YouTube Data API) in your Google Cloud Console.
 
-## Chatbot
-- Chatbot, eğitim yardımı sağlamak için tasarlanmıştır. Bir kullanıcı bir mesaj gönderdiğinde, girdi işlenir ve bot, ortaokul kitlesi için uygun bir yanıt oluşturur.
-- Örnek etkileşim:
-- Kullanıcı: "Matematikte çarpma işlemini anlat."
-- Bot: "Çarpma işlemi, bir sayısının kendisiyle belirli sayıda toplanmasıdır..."
+## Chatbot Functionality
+- The chatbot is designed to provide educational assistance. When a user sends a message, the input is processed, and the bot generates a response that is appropriate for a middle school audience.
+- Example interaction:
+    - User: "Matematikte çarpma işlemini anlat."
+    - Bot: "Çarpma işlemi, bir sayının kendisiyle belirli sayıda toplanmasıdır..."
 
-## Video Kaynakları
-- Her konu bölümü, birimlerin bir listesini içerir ve her birimde ilgili eğitim videoları bulunur.
-- Videolar doğrudan sayfadan oynatılabilir ve görsel içerikle öğrenme deneyimi geliştirilebilir. 
+## Video Resources
+- Each subject section contains a list of units, and each unit has relevant educational videos.
+- Videos can be played directly from the page, enhancing the learning experience with visual content.
 
-## Stil
-- CSS dosyaları, duyarlı ve görsel olarak çekici bir tasarım oluşturmak için kullanılır. Düğmeler, başlıklar ve kapsayıcılar dahil olmak üzere farklı bölümler için stiller tanımlanır.
-- Font Awesome, kullanıcı arayüzünü geliştirmek için simgeler eklemek için kullanılır.
+## Styling
+- CSS files are used to create a responsive and visually appealing design. Styles are defined for different sections, including buttons, headers, and containers.
+- Font Awesome is utilized for adding icons to enhance the user interface.
+
+## Contributing
+Contributions are welcome! Please fork the repository, create a new branch, and submit a pull request for any changes or improvements. Include relevant issues or suggestions for enhancements.
+
