@@ -24,7 +24,7 @@ Ders Odam is a comprehensive web application designed to assist middle school st
 - **Responsive Design**: The application is designed to be mobile-friendly, ensuring accessibility across different devices.
 - **User-Friendly Navigation**: Simple and intuitive navigation structure enables easy access to different subjects and classes.
 
-![Screenshot_1](https://github.com/user-attachments/assets/5b482fc6-7619-48e5-ab9f-f4d07b8de67f)
+![image](https://github.com/user-attachments/assets/c61621b4-c968-44f1-841c-37075a64074b)
 
 ## Technologies Used
 - **Flask**: A lightweight web framework for Python, used for server-side logic and routing.
