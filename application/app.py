@@ -9,7 +9,7 @@ genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
 
 def chat_with_bot(user_message):
     model = genai.GenerativeModel(model_name="gemini-1.5-flash")
-    response = model.generate_content([f"Eğitimci gibi cevapla (ortaokul seviyesi): {user_message}. Lütfen karmaşık terimler kullanma ve bilgi düzeyini 8. sınıf seviyesine kadar sınırla."])
+    response = model.generate_content([f"Eğitimci gibi cevapla (ortaokul seviyesi): {user_message}. Lütfen karmaşık terimler kullanma ve bilgi düzeyini maksimum 8. sınıf seviyesine kadar sınırla."])
     return response.text
 
 @app.route("/")
